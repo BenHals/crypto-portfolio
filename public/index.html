@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel = "stylesheet" href="index.css">
+        <link rel = "stylesheet" href="third_party/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Wire+One|Roboto">
+
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="chart.js"></script>
+        <script src="model.js"></script>
+        <script src="controller.js"></script>
+        
+        
+    </head>
+    <body>
+        <div id="main_display">
+            <div id="main_title">
+                LOADING 
+
+            </div>
+            <div id="main_content">
+                <div id="price">
+
+                </div>
+                <div id="graph">
+                    
+                </div>
+                <div class="modal" id="add-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h2 class="modal-title">Track Coin</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="input-group">
+                                        <input id="new_coin_input" type="text" class="form-control" placeholder="Ticker">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-secondary" type="button" onclick="new_coin()">Add</button>
+                                        </span>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="alert alert-danger" id="wrong-ticker">
+                                        not a recognised coin
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="modal" id="portfolio-modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h2 class="modal-title">Portfolio</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modal-container">
+                                    <div id="portfolio-contents">
+
+                                    </div>
+                                    <div id="add-portfolio" class="input-group">
+                                            <input id="add-port-ticker" type="text" class="form-control" placeholder="Ticker">
+                                            <input id="add-port-amount" type="number" class="form-control" value="1">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-secondary" type="button" onclick="add_portfolio()">Add</button>
+                                            </span>
+                                    </div>
+                                    <div class="alert alert-danger" id="wrong-ticker-add">
+                                        not a recognised coin
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div id="portfolio-cost" class="input-group">
+                                    <input id="add-port-cost" type="number" class="form-control" placeholder="Total Cost">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-secondary" type="button" onclick="add_portfolio_cost()">Add</button>
+                                    </span>
+                                </div>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="update_portfolio()">Done</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                <div id="coins">
+                        
+                </div>
+                <div id="value">
+                        
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

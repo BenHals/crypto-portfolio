@@ -1,0 +1,20 @@
+{
+  "name": "crypto-portfolio",
+  "version": "1.0.0",
+  "description": "A crypto portfolio visualisation",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jquery": "^3.2.1",
+    "path": "^0.12.7",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "Ben",
+  "license": "ISC"
+}

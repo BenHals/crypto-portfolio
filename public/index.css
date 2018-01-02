@@ -1,0 +1,202 @@
+#foreground-canvas{
+    pointer-events: none;
+}
+#background-canvas{
+    pointer-events: none;
+}
+.modal-backdrop{
+    opacity: 0.7 !important;
+}
+#main_display {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    width: 100%;
+    height: 100%;
+
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 25% auto;
+
+    justify-items: center;
+
+}
+
+#main_title {
+    display: block;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: center;
+
+    font-size: 20vmin;
+    font-family: 'Wire One';
+}
+
+#main_content {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    /* white-space: pre-wrap; */
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% auto 10% 10% 10% 20%;
+
+    grid-template-areas: 
+    "price price"
+    "graph graph"
+    "buy sell"
+    "coins coins"
+    "wallet wallet"
+    "value value";
+
+    justify-items: center;
+    align-items: center;
+
+}
+
+#price{
+    grid-area: price;
+    font-size: 10vmin;
+    font-family: 'Roboto';
+}
+#graph{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    grid-area: graph;
+}
+#buy{
+    font-size: 2em;
+    font-family: 'Roboto';
+    grid-area: buy;
+    justify-self: center;
+}
+#sell{
+    font-size: 2em;
+    font-family: 'Roboto';
+    grid-area: sell;
+}
+#coins{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    grid-area: coins;
+    font-size: 2em;
+    font-family: 'Roboto';
+
+    flex-direction: row;
+    padding:0px;
+    justify-content: flex-center;
+    overflow-x: hidden;
+}
+#wallet{
+    grid-area: wallet;
+    font-size: 4vmin;
+    font-family: 'Roboto';
+}
+#value{
+    grid-area: value;
+    font-size: 7vmin;
+    font-family: 'Roboto';
+}
+
+.bad-input {
+    animation: badInput 1s;
+}
+@keyframes badInput {
+    0% {color: red; transform: scale(1.5);}
+    100% {color: black; transform: scale(1);}
+}
+
+.input-group {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.coin-panel {
+    display: block;
+    width: 20%;
+    height: 90%;
+    margin:0px;
+    min-width: 5%;
+    cursor: pointer;
+
+}
+.selected-coin-panel {
+    background: lightblue;
+}
+.coin-panel-head{
+    display: block;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    font-size: 0.6em;
+    pointer-events: none;
+}
+
+.coin-panel-graph{
+    display: block;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    font-size: 0.6em;
+    pointer-events: none;
+}
+
+.coin-panel-body{
+    display: block;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    font-size: 0.4em;
+}
+
+#new-coin {
+    text-align: center;
+    padding-top: auto;
+}
+
+#new-coin-glyph {
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.modal-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+    "contents contents contents"
+    "add add add";
+}
+
+#add-portfolio {
+    grid-area: add;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr;
+}
+
+#portfolio-contents {
+    grid-area: contents;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20%;
+    grid-auto-rows: 20%;
+}
+
+.portfolio-item {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr;
+}
